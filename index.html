@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Smart Traffic Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="city-shell">
+        <aside class="sidebar glass-card">
+            <div class="brand">
+                <h1>NeuroFlow CityGrid</h1>
+                <p>AI Traffic Orchestration</p>
+            </div>
+
+            <nav class="menu" aria-label="Admin menu">
+                <button class="menu-item active">Dashboard</button>
+                <button class="menu-item">Live Cameras</button>
+                <button class="menu-item">Signal Control</button>
+                <button class="menu-item">Traffic Analytics</button>
+                <button class="menu-item">AI Prediction</button>
+                <button class="menu-item">Emergency Priority</button>
+                <button class="menu-item">Reports</button>
+                <button class="menu-item">Pollution Monitor</button>
+                <button class="menu-item">Parking Management</button>
+                <button class="menu-item">Settings</button>
+                <button class="menu-item">User Management</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <h3>System Health</h3>
+                <p id="system-health">All edge devices online</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar glass-card">
+                <div>
+                    <h2>Smart City Traffic Command Dashboard</h2>
+                    <p>Computer Vision + IoT + Adaptive Signal Intelligence</p>
+                </div>
+                <div class="topbar-actions">
+                    <button id="emergency-mode-btn" class="btn btn-alert">Emergency Priority OFF</button>
+                    <button id="refresh-btn" class="btn">Refresh Live Feed</button>
+                </div>
+            </header>
+
+            <section class="kpi-grid">
+                <article class="kpi-card glass-card">
+                    <h3>Cars</h3>
+                    <p id="cars-count" class="kpi-number">0</p>
+                </article>
+                <article class="kpi-card glass-card">
+                    <h3>Bikes</h3>
+                    <p id="bikes-count" class="kpi-number">0</p>
+                </article>
+                <article class="kpi-card glass-card">
+                    <h3>Buses</h3>
+                    <p id="buses-count" class="kpi-number">0</p>
+                </article>
+                <article class="kpi-card glass-card">
+                    <h3>Trucks</h3>
+                    <p id="trucks-count" class="kpi-number">0</p>
+                </article>
+                <article class="kpi-card glass-card">
+                    <h3>Ambulances</h3>
+                    <p id="ambulance-count" class="kpi-number">0</p>
+                </article>
+                <article class="kpi-card glass-card">
+                    <h3>Predicted Jam Risk</h3>
+                    <p id="jam-risk" class="kpi-number warning">0%</p>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <article class="panel map-panel glass-card">
+                    <div class="panel-head">
+                        <h3>Interactive Smart City Map</h3>
+                        <div class="map-search">
+                            <input id="location-search" type="text" placeholder="Search location, road, intersection, route">
+                            <button id="search-btn" class="btn">Search</button>
+                        </div>
+                    </div>
+                    <div class="map-legend">
+                        <span><i class="dot green"></i>Smooth</span>
+                        <span><i class="dot yellow"></i>Moderate</span>
+                        <span><i class="dot red"></i>Congested</span>
+                        <span><i class="dot blue"></i>Emergency Route</span>
+                    </div>
+                    <div id="map"></div>
+                    <div class="route-box" id="route-box">Suggested Alternate Route: Awaiting AI recommendation...</div>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Adaptive Signal Control</h3>
+                    <div class="signal-wrap">
+                        <div class="signal-light" id="signal-light"></div>
+                        <p>Current Signal: <strong id="signal-status">RED</strong></p>
+                        <p>Green Timer: <strong id="signal-timer">15s</strong></p>
+                        <p>Lane Density: <strong id="lane-density">Lane A: Low | Lane B: Medium | Lane C: High</strong></p>
+                    </div>
+                    <button id="optimize-signal-btn" class="btn">Run AI Signal Optimization</button>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Live Traffic Cameras (YOLO/OpenCV)</h3>
+                    <div class="camera-grid">
+                        <div class="camera-feed" data-camera="Junction-01">
+                            <span>CCTV Junction-01</span>
+                            <p id="cam-1-status">Analyzing vehicles...</p>
+                        </div>
+                        <div class="camera-feed" data-camera="Junction-02">
+                            <span>CCTV Junction-02</span>
+                            <p id="cam-2-status">Analyzing vehicles...</p>
+                        </div>
+                        <div class="camera-feed" data-camera="Junction-03">
+                            <span>CCTV Junction-03</span>
+                            <p id="cam-3-status">Analyzing vehicles...</p>
+                        </div>
+                        <div class="camera-feed" data-camera="Highway-Entry">
+                            <span>IP Cam Highway-Entry</span>
+                            <p id="cam-4-status">Analyzing vehicles...</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Traffic Analytics and Peak Trends</h3>
+                    <div id="traffic-chart" class="chart-bars"></div>
+                    <p id="peak-hour">Peak Hour Trend: 6:00 PM - 8:00 PM</p>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Congestion Heatmap and Alerts</h3>
+                    <ul id="alerts-list" class="alerts-list"></ul>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Pollution and Environment</h3>
+                    <p>CO2: <strong id="co2-level">0 ppm</strong></p>
+                    <p>AQI: <strong id="aqi-level">0</strong></p>
+                    <p>Weather-Aware Control: <strong id="weather-control">Normal</strong></p>
+                    <p>Night Optimization: <strong id="night-mode">Inactive</strong></p>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>AI Prediction Module</h3>
+                    <p id="prediction-text">Forecasting potential congestion zones using live + historical streams...</p>
+                    <p id="prediction-window">Prediction Window: Next 30 Minutes</p>
+                    <button id="predict-btn" class="btn">Run Traffic Forecast</button>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Emergency and Incident Management</h3>
+                    <p>Emergency Vehicle Detection: <strong id="emergency-status">None</strong></p>
+                    <p>Accident Alerts: <strong id="accident-status">No major incidents</strong></p>
+                    <p>Roadblocks: <strong id="roadblock-status">No active roadblocks</strong></p>
+                    <button id="simulate-emergency" class="btn btn-alert">Simulate Emergency Route</button>
+                </article>
+
+                <article class="panel glass-card">
+                    <h3>Smart City Extensions</h3>
+                    <ul class="feature-list">
+                        <li>Number Plate Recognition (ANPR)</li>
+                        <li>Pedestrian Crossing Detection</li>
+                        <li>Smart Parking Availability</li>
+                        <li>Weather-Based Traffic Control</li>
+                        <li>Night Traffic Optimization</li>
+                        <li>Citizen Mobile App Live Updates</li>
+                    </ul>
+                    <p>Parking Slots Available: <strong id="parking-status">0 / 500</strong></p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

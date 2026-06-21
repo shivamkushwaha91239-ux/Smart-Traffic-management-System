@@ -1,0 +1,247 @@
+/* Analytics.css */
+
+.analytics {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.analytics h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.analytics-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Time Range Selector */
+.time-range-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-range-selector button {
+  padding: 10px 20px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--primary-color);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-range-selector button:hover {
+  border-color: var(--primary-color);
+  background: rgba(0, 212, 255, 0.2);
+}
+
+.time-range-selector button.active {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--darker-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Efficiency Metrics */
+.efficiency-metrics {
+  background: linear-gradient(135deg, rgba(0, 200, 136, 0.1) 0%, rgba(0, 255, 200, 0.1) 100%);
+  border: 2px solid rgba(0, 200, 136, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.efficiency-metrics h2 {
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 200, 136, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 200, 136, 0.2);
+}
+
+.metric-card h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-card .metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* Charts */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.chart-section {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 18, 35, 0.9) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.chart-section:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+}
+
+.chart-section h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+}
+
+.chart-wrapper canvas {
+  max-height: 100%;
+}
+
+/* Data Table */
+.data-table-section {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 18, 35, 0.9) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.data-table-section h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  background: rgba(0, 212, 255, 0.1);
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.data-table th {
+  padding: 12px;
+  text-align: left;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.data-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Signal Badge */
+.signal-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.signal-badge.RED {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+  border: 1px solid #ff4444;
+}
+
+.signal-badge.YELLOW {
+  background: rgba(255, 187, 51, 0.2);
+  color: #ffbb33;
+  border: 1px solid #ffbb33;
+}
+
+.signal-badge.GREEN {
+  background: rgba(0, 200, 81, 0.2);
+  color: #00c851;
+  border: 1px solid #00c851;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .time-range-selector {
+    flex-direction: column;
+  }
+
+  .time-range-selector button {
+    width: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .data-table {
+    font-size: 0.85rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+  }
+}

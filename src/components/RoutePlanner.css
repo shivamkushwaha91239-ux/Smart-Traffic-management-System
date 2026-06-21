@@ -1,0 +1,303 @@
+/* RoutePlanner.css - Enhanced Modern Styling */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Button Hover Effects */
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Input Focus States */
+select:focus, input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Route Card Animations */
+.route-card {
+  animation: slideIn 0.4s ease-out;
+}
+
+.route-card:hover {
+  transform: translateY(-4px);
+}
+
+.selected-card {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Traffic Bar Animation */
+.traffic-bar-fill {
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Loading State */
+.loading-spinner {
+  display: inline-block;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.badge-success {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-danger {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* Traffic Level Indicators */
+.traffic-light {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.traffic-light.green {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.traffic-light.yellow {
+  background: #eab308;
+  box-shadow: 0 0 8px #eab308;
+}
+
+.traffic-light.orange {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.traffic-light.red {
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+/* Direction Steps */
+.direction-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.direction-step:hover {
+  background: #eff6ff;
+  border-left-color: #1e40af;
+}
+
+.step-number {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Information Box */
+.info-box {
+  padding: 16px;
+  background: #f0f9ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.info-box.warning {
+  background: #fef3c7;
+  border-left-color: #d97706;
+}
+
+.info-box.success {
+  background: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.info-box.error {
+  background: #fee2e2;
+  border-left-color: #ef4444;
+}
+
+/* Stat Cards */
+.stat-card {
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 8px 0;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Focus Ring */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .grid-two-column {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .route-cards-container {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .route-cards-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .route-preference-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-buttons {
+    flex-direction: column !important;
+  }
+}
