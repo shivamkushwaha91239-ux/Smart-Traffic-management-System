@@ -4,10 +4,12 @@ A cutting-edge intelligent traffic control platform built on Computer Vision, Ma
 
 ## 👥 Team Members
 
-- 👨‍💻 Abhishek Mishra
-- 👨‍💻 Shivam Kumar
-- 👨‍💻 Rishi Upadhyay
-- 👨‍💻 Amandeep Yadav
+| Name | Role | Responsibilities |
+|------|------|------------------|
+| **Abhishek Mishra** | Full Stack Developer | Backend Development, API Integration, System Design & Project Coordination |
+| **Shivam Kumar** | Machine Learning Engineer | Machine Learning Models, YOLO Integration, Traffic Prediction & AI Analytics |
+| **Rishi Upadhyay** | Frontend Developer | UI/UX Design
+| **Amandeep Yadav** | IoT & Database Engineer |  Data Management & Real-time Synchronization |
 
 ---
 
