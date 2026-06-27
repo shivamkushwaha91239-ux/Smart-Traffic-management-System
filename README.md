@@ -2,6 +2,16 @@
 
 A cutting-edge intelligent traffic control platform built on Computer Vision, Machine Learning, IoT sensors, and Adaptive Signal Control for urban congestion management.
 
+## 👥 Team Members
+
+- 👨‍💻 Abhishek Mishra
+- 👨‍💻 Shivam Kumar
+- 👨‍💻 Rishi Upadhyay
+- 👨‍💻 Amandeep Yadav
+
+---
+
+
 ## 🎯 System Features
 
 ### 1. **Real-Time Vehicle Detection (YOLO/OpenCV)**
